@@ -1,0 +1,19 @@
+
+<div class="wrapper">
+  <div class="sideOne">
+    <div class="mat-headline-5">Player One</div>
+    <app-rooster-loader class="plrOne" [playerIndex]="0"></app-rooster-loader>
+    <app-table-rooster [playerIndex]="0"></app-table-rooster>
+  </div>
+  <div class="middle">
+
+    <app-results></app-results>
+    <app-battlefield class="battleField" #Battlefield> </app-battlefield>
+  </div>
+  <div class="sideTwo">
+    <div class="mat-headline-5">Player Two</div>
+    <app-rooster-loader class="plrTwo" [playerIndex]="1"></app-rooster-loader>
+    <app-table-rooster [playerIndex]="1"></app-table-rooster>
+  </div>
+</div>
+

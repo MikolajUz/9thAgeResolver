@@ -1,0 +1,115 @@
+<table mat-table [dataSource]="Rooster" multiTemplateDataRows>
+  <ng-container *ngFor="let def of columnsDef" [matColumnDef]="def.key">
+    <th mat-header-cell *matHeaderCellDef>{{ def.header }}</th>
+
+    <td mat-cell *matCellDef="let unit">{{ unit[def.key] }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="expand">
+    <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+    <td mat-cell *matCellDef="let Unit">
+      <button mat-icon-button>
+        <mat-icon *ngIf="Unit.selected">keyboard_arrow_down</mat-icon>
+        <mat-icon *ngIf="!Unit.selected">keyboard_arrow_up</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="expandedDetail">
+    <td
+      mat-cell
+      *matCellDef="let Unit"
+      [attr.colspan]="columnsToDisplayWithExpand.length"
+    >
+      <div
+        class="example-Unit-detail"
+        [@detailExpand]="Unit.selected ? 'expanded' : 'collapsed'"
+      >
+        <div class="unit-diagram">
+          <div>{{ Unit.points }} - {{ Unit.name }}, {{ Unit.options }}</div>
+
+          <div class="btn-line">
+            Quantity:
+            <button
+              [color]="playerIndex ? 'accent' : 'primary'"
+              mat-icon-button
+              aria-label="Icon Add button "
+              (click)="changeStat(Unit.ID, 'Increase quantity')"
+            >
+              <mat-icon>add_circle</mat-icon>
+            </button>
+            {{ Unit.quantity }}
+            <button
+              [color]="playerIndex ? 'accent' : 'primary'"
+              mat-icon-button
+              aria-label="Icon Add button "
+              (click)="changeStat(Unit.ID, 'Decrease quantity')"
+            >
+              <mat-icon>remove_circle</mat-icon>
+            </button>
+          </div>
+
+          <div class="btn-line">
+            Wounds:
+            <button
+              mat-icon-button
+              [color]="playerIndex ? 'accent' : 'primary'"
+              aria-label="Icon Add button "
+              (click)="changeStat(Unit.ID, 'Add wound')"
+            >
+              <mat-icon>add_circle</mat-icon>
+            </button>
+            {{ Unit.wounds }}
+            <button
+              mat-icon-button
+              [color]="playerIndex ? 'accent' : 'primary'"
+              aria-label="Icon Add button "
+              (click)="changeStat(Unit.ID, 'Remove wound')"
+            >
+              <mat-icon>remove_circle</mat-icon>
+            </button>
+          </div>
+          <button
+            mat-raised-button
+            [color]="playerIndex ? 'accent' : 'primary'"
+            (click)="changeStat(Unit.ID, 'Delete unit')"
+          >
+            Delete
+          </button>
+
+          <mat-form-field class="file-length-inputs">
+            <input
+              matInput
+              type="number"
+              min="0"
+              (input)="setFileLength($event, Unit.ID)"
+              value="{{ Unit.fileLength }}"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="pick">
+    <th mat-header-cell *matHeaderCellDef>&nbsp;</th>
+    <td mat-cell *matCellDef="let Unit">
+      <button mat-icon-button (click)="pickUnit(Unit)">
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></tr>
+  <tr
+    mat-row
+    *matRowDef="let Unit; columns: columnsToDisplayWithExpand"
+    [class.example-expanded-row]="expandedUnit === Unit"
+    (click)="selectUnit(Unit.ID)"
+  ></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: ['expandedDetail']"
+    class="detail-row"
+  ></tr>
+</table>

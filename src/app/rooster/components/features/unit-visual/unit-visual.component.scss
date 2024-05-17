@@ -1,0 +1,37 @@
+.drag-grid {
+  position: absolute;
+
+}
+.drag-grid2 {
+  position: absolute;
+  border: 0.1rem solid black;
+
+  background-color: antiquewhite;
+}
+
+.RankAndFile,
+.RankAndFile2 {
+  position: absolute;
+  color: white;
+  text-align: center;
+  font-size: 100%;
+  border: 0.05rem solid black;
+}
+
+.RankAndFile {
+  background-color: var(--color-primary);
+}
+
+.RankAndFile2 {
+  background-color: var(--color-accent);
+}
+
+.handler-top {
+  position: absolute;
+}
+
+.handler-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

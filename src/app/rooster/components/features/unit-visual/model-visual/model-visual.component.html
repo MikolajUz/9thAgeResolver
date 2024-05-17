@@ -1,0 +1,142 @@
+<!-- <div *ngIf="orientation === 'top'">
+  <div *ngFor="let file of (data | async)!.fileYPlaces; index as y">
+    <div *ngFor="let rank of (data | async)!.rankXPlaces; index as x">
+      <div
+        [ngClass]="playerIndex ? 'RankAndFile2' : 'RankAndFile'"
+        [style.width]="(data | async)!.unitRFWidthScss"
+        [style.height]="(data | async)!.unitRFHeightScss"
+        [ngDraggable]="false"
+        [bounds]="unit"
+        [inBounds]="true"
+        [gridSize]="(data | async)!.gridUnit"
+        zIndex="200"
+        id="{{ ID }},x={{ rank }},y={{ y }}"
+        [position]="{
+          x: rank * (data | async)!.unitRFWidth,
+          y:
+            ((data | async)!.unitFileGrids.length - file - 1) *
+            (data | async)!.unitRFHeight
+        }"
+      ></div>
+    </div>
+  </div>
+  <div *ngIf="(data | async)!.RaFRest">
+    <div
+      *ngFor="let rank of (data | async)!.RaFRest"
+      [ngClass]="playerIndex ? 'RankAndFile2' : 'RankAndFile'"
+      [style.width]="(data | async)!.unitRFWidthScss"
+      [style.height]="(data | async)!.unitRFHeightScss"
+      ngDraggable
+      [bounds]="unit"
+      [inBounds]="true"
+      [gridSize]="(data | async)!.gridUnit"
+      zIndex="200"
+      id="{{ ID }},x={{ rank }},y={{ (data | async)!.fileYPlaces.length }}"
+      [position]="{
+        x: rank * (data | async)!.unitRFWidth,
+        y:
+          (-1 +
+            (data | async)!.unitFileGrids.length -
+            (data | async)!.fileYPlaces.length) *
+          (data | async)!.unitRFHeight
+      }"
+    ></div>
+  </div>
+</div>
+
+<div *ngIf="orientation === 'bottom'">
+  <div *ngFor="let file of (data | async)!.fileYPlaces; index as y">
+    <div *ngFor="let rank of (data | async)!.rankXPlaces; index as x">
+      <div
+        [ngClass]="playerIndex ? 'RankAndFile2' : 'RankAndFile'"
+        [style.width]="(data | async)!.unitRFWidthScss"
+        [style.height]="(data | async)!.unitRFHeightScss"
+        [ngDraggable]="false"
+        [bounds]="unit"
+        [inBounds]="true"
+        [gridSize]="(data | async)!.gridUnit"
+        zIndex="200"
+        id="{{ ID }},x={{ rank }},y={{ y }}"
+        [position]="{
+          x: rank * (data | async)!.unitRFWidth,
+          y: file * (data | async)!.unitRFHeight
+        }"
+      ></div>
+    </div>
+  </div>
+  <div *ngIf="(data | async)!.RaFRest">
+    <div
+      *ngFor="let rank of (data | async)!.RaFRest"
+      [ngClass]="playerIndex ? 'RankAndFile2' : 'RankAndFile'"
+      [style.width]="(data | async)!.unitRFWidthScss"
+      [style.height]="(data | async)!.unitRFHeightScss"
+      ngDraggable
+      [bounds]="unit"
+      [inBounds]="true"
+      [gridSize]="(data | async)!.gridUnit"
+      zIndex="200"
+      id="{{ ID }},x={{ rank }},y={{ (data | async)!.fileYPlaces.length }}"
+      [position]="{
+        x: rank * (data | async)!.unitRFWidth,
+        y: (data | async)!.unitFileGrids.length * (data | async)!.unitRFHeight
+      }"
+    ></div>
+  </div>
+</div> -->
+<div *ngIf="orientation === 'top'">
+  <div *ngFor="let file of (data | async)!.fileYPlaces; index as y">
+    <div *ngFor="let rank of (data | async)!.rankXPlaces; index as x">
+      <div
+        [ngClass]="playerIndex ? 'RankAndFile2' : 'RankAndFile'"
+        [style.width]="(data | async)!.unitRFWidthScss"
+        [style.height]="(data | async)!.unitRFHeightScss"
+      
+        zIndex="200"
+        id="{{ ID }},x={{ rank }},y={{ y }}"
+       
+      ></div>
+    </div>
+  </div>
+  <div *ngIf="(data | async)!.RaFRest">
+    <div
+      *ngFor="let rank of (data | async)!.RaFRest"
+      [ngClass]="playerIndex ? 'RankAndFile2' : 'RankAndFile'"
+      [style.width]="(data | async)!.unitRFWidthScss"
+      [style.height]="(data | async)!.unitRFHeightScss"
+      ngDraggable
+  
+      zIndex="200"
+      id="{{ ID }},x={{ rank }},y={{ (data | async)!.fileYPlaces.length }}"
+  
+    ></div>
+  </div>
+</div>
+
+<div *ngIf="orientation === 'bottom'">
+  <div *ngFor="let file of (data | async)!.fileYPlaces; index as y">
+    <div *ngFor="let rank of (data | async)!.rankXPlaces; index as x">
+      <div
+        [ngClass]="playerIndex ? 'RankAndFile2' : 'RankAndFile'"
+        [style.width]="(data | async)!.unitRFWidthScss"
+        [style.height]="(data | async)!.unitRFHeightScss"
+   
+    
+        zIndex="200"
+        id="{{ ID }},x={{ rank }},y={{ y }}"
+   
+      ></div>
+    </div>
+  </div>
+  <div *ngIf="(data | async)!.RaFRest">
+    <div
+      *ngFor="let rank of (data | async)!.RaFRest"
+      [ngClass]="playerIndex ? 'RankAndFile2' : 'RankAndFile'"
+      [style.width]="(data | async)!.unitRFWidthScss"
+      [style.height]="(data | async)!.unitRFHeightScss"
+   
+      zIndex="200"
+      id="{{ ID }},x={{ rank }},y={{ (data | async)!.fileYPlaces.length }}"
+    
+    ></div>
+  </div>
+</div>

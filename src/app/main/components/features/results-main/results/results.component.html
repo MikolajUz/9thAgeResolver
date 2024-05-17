@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div class="buttons">
+    <button mat-raised-button (click)="startSkirmish()">Start skirmish</button>
+   
+  </div>
+  <div class="plrOne">
+    <app-result-table [player]="0"></app-result-table>
+  </div>
+  <div class="plrTwo">
+    <app-result-table [player]="1"></app-result-table>
+  </div>
+
+  <div>{{ (messages | async)?.prompt }}</div>
+  <div>
+  <button *ngIf="(messages | async)?.prompt==='Reposition units and click resolve hit button to proceed to next agility step','prompt'" mat-raised-button (click)="resolveHit()">Next agility step</button>
+</div>
+  <div>{{ (messages | async)?.combatEnd }}</div>
+</div>

@@ -1,0 +1,16 @@
+.RankAndFile,
+.RankAndFile2 {
+  position: absolute;
+  color: white;
+  text-align: center;
+  font-size: 100%;
+  border: 0.05rem solid black;
+}
+
+.RankAndFile {
+  background-color: var(--color-primary);
+}
+
+.RankAndFile2 {
+  background-color: var(--color-accent);
+}

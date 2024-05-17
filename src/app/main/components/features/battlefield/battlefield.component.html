@@ -1,0 +1,33 @@
+<!-- 
+  <div class="container" #container (resized)="onResized($event)">
+    <div class="grid-container" #battlefieldBoundaries id="battlefield">
+      <ng-template unitInjectPlace></ng-template>
+      <div *ngFor="let x of gridsX">
+        <div *ngFor="let y of gridsY">
+          <div
+            [ngDraggable]="false"
+            [position]="{ x: x * gridUnit, y: y * gridUnit }"
+            class="grid"
+            [style.height]="gridUnitScss"
+            [style.width]="gridUnitScss"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+ -->
+
+<div class="container" #container (resized)="onResized($event)">
+  <div class="grid-container" #battlefieldBoundaries id="battlefield">
+    <ng-template unitInjectPlace></ng-template>
+    <div *ngFor="let x of gridsX">
+      <div *ngFor="let y of gridsY">
+        <div
+          class="grid"
+          [style.height]="gridUnitScss"
+          [style.width]="gridUnitScss"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>

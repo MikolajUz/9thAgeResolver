@@ -1,0 +1,13 @@
+input[type="file"] {
+  display: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown {
+  padding: 2rem;
+}

@@ -1,0 +1,43 @@
+<div *ngIf="(scores$ | async)![0]">
+  <div *ngIf="player===0" class="mat-headline-6">Player One</div>
+  <div *ngIf="player===1" class="mat-headline-6">Player Two</div>
+  <table mat-table [dataSource]="scores$">
+    <ng-container matColumnDef="Name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let score">{{ score.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Wounds">
+      <th mat-header-cell *matHeaderCellDef>Wounds</th>
+      <td mat-cell *matCellDef="let score">{{ score.woundsDealt }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Standard">
+      <th mat-header-cell *matHeaderCellDef>Standard</th>
+      <td mat-cell *matCellDef="let score">{{ score.standard }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="RankBonus">
+      <th mat-header-cell *matHeaderCellDef>Rank Bonus</th>
+      <td mat-cell *matCellDef="let score">{{ score.rankBonus }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="PositionBonus">
+      <th mat-header-cell *matHeaderCellDef>Flank or Rear</th>
+      <td mat-cell *matCellDef="let score">{{ score.positionBonus }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Charge">
+      <th mat-header-cell *matHeaderCellDef>Charge</th>
+      <td mat-cell *matCellDef="let score">{{ score.charge }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Other">
+      <th mat-header-cell *matHeaderCellDef>Other</th>
+      <td mat-cell *matCellDef="let score">{{ score.otherBonus }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+</div>

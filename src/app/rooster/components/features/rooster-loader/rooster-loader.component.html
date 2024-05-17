@@ -1,0 +1,9 @@
+<label
+  (dragover)="onDragOver($event)"
+  (drop)="onDropSuccess($event)"
+  class="dropdown"
+>
+  Choose a file or drag it here
+  <input (change)="onChange($event)" type="file" />
+</label>
+<mat-hint *ngIf="validFile">Choose txt file</mat-hint>

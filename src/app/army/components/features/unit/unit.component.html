@@ -1,0 +1,61 @@
+<div class="wrapper">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="mat-headline-3">{{ unit.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="statLine">
+        <div class="stat">
+          <b>Dis</b>
+          <div>{{ unit.dis }}</div>
+        </div>
+        <div class="stat">
+          <b>HP</b>
+          <div>{{ unit.hp }}</div>
+        </div>
+        <div class="stat">
+          <b>Def</b>
+          <div>{{ unit.def }}</div>
+        </div>
+        <div class="stat">
+          <b>Res</b>
+          <div>{{ unit.res }}</div>
+        </div>
+        <div class="stat">
+          <b>Arm</b>
+          <div>{{ unit.arm }}</div>
+        </div>
+        <div class="stat">
+          <b>Att</b>
+          <div>{{ unit.att }}</div>
+        </div>
+        <div class="stat">
+          <b>Off</b>
+          <div>{{ unit.of }}</div>
+        </div>
+        <div class="stat">
+          <b>Str</b>
+          <div>{{ unit.str }}</div>
+        </div>
+        <div class="stat">
+          <b>AP</b>
+          <div>{{ unit.ap }}</div>
+        </div>
+        <div class="stat">
+          <b>Agi</b>
+          <div>{{ unit.agi }}</div>
+        </div>
+
+        <div class="stat">
+          <b>Type</b>
+          <div>{{ unit.unit_type }}</div>
+        </div>
+        <div class="stat">
+          <b>Base</b>
+          <div>{{ unit.base }}</div>
+        </div>
+      </div>
+      <div *ngFor="let rule of unit.rules">{{ rule.name }},</div>
+    </mat-card-content>
+  </mat-card>
+</div>

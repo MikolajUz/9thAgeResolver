@@ -1,0 +1,100 @@
+<!-- <div
+  *ngIf="(data | async)?.gridUnit"
+  #unit
+  [id]="ID"
+  [ngDraggable]="true"
+  [bounds]="myBounds"
+  [inBounds]="true"
+  [handle]="handler"
+  [gridSize]="(data | async)!.gridUnit"
+  zIndex="100"
+  [preventDefaultEvent]="false"
+  class="drag-grid"
+  [style.width]="(data | async)?.unitWidthScss"
+  [style.height]="(data | async)?.unitHeightScss"
+  zIndexMoving="200"
+  [position]="{ x: 200, y: 200 }"
+>
+  <div
+    zIndex="1000"
+    [ngDraggable]="false"
+    #handler
+    [ngClass]="orientation === 'top' ? 'handler-top' : 'handler-bottom'"
+  >
+    <mat-icon class="material-symbols-outlined">open_with</mat-icon>
+  </div>
+
+  <div *ngFor="let x of (data | async)?.unitRankGrids">
+    <div *ngFor="let y of (data | async)?.unitFileGrids">
+      <div
+        [gridSize]="(data | async)!.gridUnit"
+        [ngDraggable]="false"
+        [bounds]="unit"
+        [inBounds]="true"
+        [position]="{
+          x: x * (data | async)!.unitRFWidth,
+          y: y * (data | async)!.unitRFHeight
+        }"
+        class="drag-grid2"
+        [style.width]="(data | async)!.unitRFWidthScss"
+        [style.height]="(data | async)!.unitRFHeightScss"
+        zIndex="110"
+      ></div>
+    </div>
+  </div>
+  <app-model-visual
+    [data]="data"
+    [playerIndex]="playerIndex"
+    [orientation]="orientation"
+    [ID]="ID"
+    [unit]="unit"
+  ></app-model-visual>
+</div> -->
+
+
+<div
+  *ngIf="(data | async)?.gridUnit"
+  #unit
+  [id]="ID"
+
+
+
+
+  zIndex="100"
+
+  class="drag-grid"
+  [style.width]="(data | async)?.unitWidthScss"
+  [style.height]="(data | async)?.unitHeightScss"
+  zIndexMoving="200"
+
+>
+  <div
+    zIndex="1000"
+  
+    #handler
+    [ngClass]="orientation === 'top' ? 'handler-top' : 'handler-bottom'"
+  >
+    <mat-icon class="material-symbols-outlined">open_with</mat-icon>
+  </div>
+
+  <div *ngFor="let x of (data | async)?.unitRankGrids">
+    <div *ngFor="let y of (data | async)?.unitFileGrids">
+      <div
+      
+     
+     
+        class="drag-grid2"
+        [style.width]="(data | async)!.unitRFWidthScss"
+        [style.height]="(data | async)!.unitRFHeightScss"
+        zIndex="110"
+      ></div>
+    </div>
+  </div>
+  <app-model-visual
+    [data]="data"
+    [playerIndex]="playerIndex"
+    [orientation]="orientation"
+    [ID]="ID"
+    [unit]="unit"
+  ></app-model-visual>
+</div>
